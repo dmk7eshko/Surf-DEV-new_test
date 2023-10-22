@@ -1,0 +1,38 @@
+.contact_us,
+a.wp-block-button__link.no-border-radius.contact_us,
+.cjm a.wp-block-button__link.no-border-radius.contact_us {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-family: 'Steinbeck', sans-serif !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-size: 21px !important;
+    line-height: 67px !important;
+    color: #000 !important;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid #000;
+    max-width: 340px;
+    height: 67px;
+    transition: 0.3s;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media-up(md) {
+        max-width: none;
+        width: 500px;
+        height: 110px;
+        line-height: 110px !important;
+        font-size: 32px !important;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    &:hover {
+        background: #000000;
+        color: #fff !important;
+        transition: 0.3s;
+    }
+}

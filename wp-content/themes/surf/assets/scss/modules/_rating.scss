@@ -1,0 +1,43 @@
+.rating {
+    display: inline-block;
+    position: relative;
+    margin-left: -3px;
+
+    @include media-up(md) {
+        margin-left: -4px;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        margin: 0 3px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @include media-up(md) {
+            width: 32px;
+            height: 32px;
+            margin: 0 4px;
+        }
+    }
+
+    &__line {
+        display: inline-flex;
+
+        &.colored {
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            color: $gold;
+            width: calc(var(--rating) / 6 * 100% + 2.5px);
+
+            @include media-up(md) {
+                width: calc(var(--rating) / 6 * 100% + 3px);
+            }
+        }
+    }
+}

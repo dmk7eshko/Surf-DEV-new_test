@@ -1,0 +1,118 @@
+.hww {
+    padding: 56px 0;
+    background-color: #fff;
+    
+    @include media-up(lg) {
+        padding: 152px 0;
+    }
+
+    &__title {
+        margin-bottom: 32px;
+    }
+
+    &-slider {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        padding: 0 16px;
+
+        &__pagination {
+            &.swiper-pagination {
+                &-bullets {
+                    display: flex;
+                    margin-bottom: 56px;
+                    position: static;
+                    text-align: unset;
+
+                    @include media-down(sm) {
+                        width: 100vw;
+                        position: relative;
+                        bottom: unset;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        padding: 0 16px;
+                        overflow-x: auto;
+
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+                    }
+
+                    @include media-up(lg) {
+                        margin-bottom: 152px;
+                    }
+                }
+
+                .swiper-pagination-bullet {
+                    font-size: 14px;
+                    width: auto;
+                    height: auto;
+                    background: none;
+                    color: #828282;
+                    opacity: 1;
+                    transition: color 0.3s;
+                    margin: 0 8px 0 0;
+                    display: inline-flex;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    @include media-up(md) {
+                        margin: 0 16px 0 0;
+                        font-size: 24px;
+                    }
+
+                    @include media-up(lg) {
+                        margin: 0 24px 0 0;
+                    }
+
+                    .stage {
+                        overflow: hidden;
+                        width: 0;
+                        transition: unset;
+                        white-space: nowrap;
+                        margin-left: 4px;
+                    }
+
+                    &:hover,
+                    &-active {
+                        color: #1a1a1a;
+                    }
+
+                    &-active {
+                        .stage {
+                            width: 100%;
+                            transition: width 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__next {
+            @extend .wwd-slider__next;
+        }
+
+        &__prev {
+            @extend .wwd-slider__prev;
+        }
+
+        &__description {
+            font-family: 'Steinbeck', sans-serif;
+            font-size: 20px;
+            line-height: 1.2;
+            max-width: 75%;
+            margin-left: auto;
+
+            @include media-up(md) {
+                font-size: 32px;
+            }
+
+            @include media-up(lg) {
+                margin: 0 auto;
+                max-width: 715px;
+            }
+        }
+    }
+}

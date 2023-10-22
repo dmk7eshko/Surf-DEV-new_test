@@ -1,0 +1,119 @@
+$grid__bp-sm: 425.1;
+$grid__bp-md: 767.9;
+$grid__bp-lg: 1023.9;
+$grid__bp-lgs: 1280.1;
+$grid__bp-xl: 1920.1;
+$grid__cols: 12;
+$gap: clamp(16px, 2cqi, 24px);
+
+$map-grid-props: (
+        '': 0,
+        '-sm': $grid__bp-sm,
+        '-md': $grid__bp-md,
+        '-lg': $grid__bp-lg,
+        '-lgs': $grid__bp-lg,
+        '-xl': $grid__bp-xl
+);
+
+@mixin create-mq($breakpoint) {
+  @if($breakpoint == 0) {
+    @content;
+  } @else {
+    @media screen and (min-width: $breakpoint *1px) {
+      @content;
+    }
+  }
+}
+
+@mixin create-col-classes($modifier, $grid-cols, $breakpoint) {
+  @include create-mq($breakpoint) {
+    .col#{$modifier}-offset-0 {
+      margin-left: 0;
+    }
+    @for $i from 1 through $grid-cols {
+      .col#{$modifier}-#{$i} {
+// 		  calc((100 / (12 / 4) * 1%) - ((96px / 9) * (12 / 4)))
+// 		  flex-basis: calc((100 / (#{$grid-cols} / #{$i}) * 1%) - (((#{$gap} * 2) / (#{$grid-cols} - (#{$grid-cols} / #{$i}))) * (#{$grid-cols} / #{$i})));
+// 		  flex-basis: calc((100 / (#{$grid-cols} / #{$i}) * 1%) - (#{$gap} * #{$grid-cols}) );
+//         flex-basis: (100 / ($grid-cols / $i) - ($gaps)* 1% ) * 1%;
+//       		flex-basis: 0;
+			-webkit-box-flex: 1;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
+		  	flex: 0 0 auto;
+// 			flex: 0 0 calc((100 / (#{$grid-cols} / #{$i}) * 1%) - (((#{$gap} * 2) / (#{$grid-cols} - (#{$grid-cols} / #{$i}))) * (#{$grid-cols} / #{$i})));
+// 			width: calc((100 / (#{$grid-cols} / #{$i}) * 1%) - ((((#{$gap} / 2) * ((#{$grid-cols} / #{$i}) + 1)) / (#{$grid-cols} - (#{$grid-cols} / #{$i}))) * (#{$grid-cols} / #{$i})));	  
+			width: calc((100 / (#{$grid-cols} / #{$i}) * 1%) - ((((#{$gap} / 2) * ((#{$grid-cols} / #{$i}))) / (#{$grid-cols} - (#{$grid-cols} / #{$i}))) * (#{$grid-cols} / (#{$grid-cols} / #{$i}))));	  
+	}
+	.col#{$modifier}-12 {
+			flex: auto;
+		width: 100%;
+	  }
+// 	.col#{$modifier}-6 {
+// 			flex: 1;
+// 	  }
+	.col#{$modifier}-1{
+		flex: 1;
+	}
+      .col#{$modifier}-offset-#{$i} {
+        margin-left:  calc(102 / (#{$grid-cols} / #{$i}) * 1%);
+//         calc((100 / (12 / 1) * 1%) + (((20px * 1) / (12 + (12 / 1))) * (12 / 2)))
+// 			margin-left: calc((100 / (#{$grid-cols} / #{$i}) * 1%) + (((#{$gap} * 1) / (#{$grid-cols} + (#{$grid-cols} / #{$i}))) * (#{$grid-cols} / #{$i})));
+      }
+    }
+  }
+}
+@each $modifier , $breakpoint in $map-grid-props {
+  @if($modifier == '') {
+    $modifier: '-sm';
+  }
+}
+.container {
+  max-width: $grid__bp-xl - 160px;
+	width: 95%;
+  margin: 0 auto;
+	
+  &--fluid {
+    margin: 0;
+    max-width: 100%;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100% !important;
+	gap: $gap;
+// 	  [class*='col-']:not(:last-child) {
+//   margin-right: $gap;
+// }
+  }
+  @each $modifier , $breakpoint in $map-grid-props {
+    @include create-col-classes($modifier, $grid__cols, $breakpoint);
+  }
+}
+.grid-test{
+	    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+    left: 0;
+    right: 0;
+	 [class*='col-']{
+		height: 100vh;
+    background: #ff000036;
+    outline: none;
+	}
+}
+//Styling of grid for demostration purposes
+.container {
+	padding: 0;
+
+  @at-root {
+    [class*='col-'] {
+//       outline: 1px solid #ff6f69;
+    }
+  }
+}
+
+
+
+

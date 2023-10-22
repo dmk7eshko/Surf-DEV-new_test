@@ -1,0 +1,101 @@
+.faq {
+    &-wrapper {
+        max-width: 820px;
+        margin: 0 auto;
+        counter-reset: faq;
+    }
+
+    &-item {
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(#1a1a1a, 0.1);
+
+        @include media-up(md) {
+            padding: 32px 0;
+        }
+
+        &__link {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 20px;
+            line-height: 1.2;
+            color: #1a1a1a;
+
+            @include media-up(md) {
+                font-size: 32px;
+                position: relative;
+                padding: 0 56px;
+            }
+
+            @media (min-width: 1025px) {
+                padding: 0 105px;
+            }
+
+            &:before {
+                counter-increment: faq;
+                content: counter(faq)'.';
+                width: 100%;
+                margin-bottom: 8px;
+
+                @include media-up(md) {
+                    position: absolute;
+                    left: 0;
+                    width: auto;
+                    margin-bottom: 0;
+                }
+            }
+
+            span {
+                flex: 1;
+            }
+
+            svg {
+                color: #828282;
+                flex-shrink: 0;
+                width: 24px;
+                height: 24px;
+                margin-left: 16px;
+                transition: all 0.3s;
+
+                @include media-up(md) {
+                    margin-left: 0;
+                    width: 48px;
+                    height: 48px;
+                    position: absolute;
+                    right: 0;
+                    top: -2px;
+                }
+            }
+
+            &.active {
+                svg {
+                    transform: rotate(-180deg);
+                    color: #1a1a1a;
+                }
+            }
+        }
+
+        &__panel {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s;
+        }
+
+        &__content {
+            padding-top: 16px;
+            font-size: 16px;
+            line-height: 1.32;
+
+            @include media-up(md) {
+                padding-left: 56px;
+                padding-top: 40px;
+                font-size: 20px;
+                opacity: 0.8;
+            }
+
+            @media (min-width: 1025px) {
+                padding-left: 105px;
+            }
+        }
+    }
+}

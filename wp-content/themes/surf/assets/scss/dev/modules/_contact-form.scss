@@ -1,0 +1,459 @@
+.contact {
+	padding: 0;
+
+	&__inner {
+		@media (min-width: 640px) {
+			display: flex;
+			align-items: flex-start;
+			flex-direction: row;
+		}
+	}
+
+	&__title {
+		margin-bottom: 24px;
+		@extend .h2;
+
+		@media (min-width: 640px) {
+			margin-bottom: 40px;
+		}
+
+		@media (min-width: 1280px) {
+			margin-bottom: 56px;
+		}
+
+		&--desktop {
+			display: none;
+
+			@media (min-width: 640px) {
+				display: block;
+			}
+		}
+
+		&--mobile {
+			display: block;
+
+			@media (min-width: 640px) {
+				display: none;
+			}
+		}
+	}
+
+	&__form {
+		width: 100%;
+
+		//@media (min-width: 640px) {
+		//	padding-left: 96px;
+		//}
+
+		@media (min-width: 960px) {
+			padding-left: 0;
+			margin-left: auto;
+			max-width: 672px;
+		}
+
+		@media (min-width: 1280px) {
+			max-width: 768px;
+		}
+
+		@media (min-width: 1440px) {
+			max-width: 875px;
+		}
+
+		@media (min-width: 1680px) {
+			max-width: 1025px;
+		}
+
+		form {
+			font-size: 0;
+
+			//@media (min-width: 960px) {
+			//	max-width: 448px;
+			//}
+
+			@media (min-width: 1280px) {
+				max-width: 766px;
+			}
+
+			@media (min-width: 1680px) {
+				max-width: 900px;
+			}
+		}
+
+		.contact-form-input {
+			margin-bottom: 24px;
+			width: calc(50% - 10px);
+
+			@media (min-width: 640px) {
+				margin-bottom: 36px;
+			}
+
+			@media (min-width: 960px) {
+				margin-bottom: 40px;
+				width: calc(100% / 3 - (72px / 3));
+			}
+
+			@media (min-width: 1280px) {
+				margin-bottom: 56px;
+			}
+
+			&.contact-full {
+				width: 100%;
+			}
+
+			label {
+				font-family: $steinbeck;
+				bottom: 12px;
+				font-size: 12px;
+				line-height: 16px;
+
+				@media (min-width: 640px) {
+					bottom: 8px;
+					line-height: 26px;
+					font-size: 18px;
+				}
+
+				@media (min-width: 1280px) {
+					font-size: 20px;
+				}
+
+				@media (min-width: 1680px) {
+					font-size: 24px;
+					line-height: 1.33;
+				}
+			}
+
+			input,
+			textarea {
+				font-family: $steinbeck;
+				border-bottom: 1px solid $black;
+				font-size: 12px;
+				line-height: 16px;
+				padding-bottom: 12px;
+				color: $black;
+				padding-top: 0;
+				min-height: auto;
+
+				@media (min-width: 640px) {
+					line-height: 26px;
+					font-size: 18px;
+					padding-bottom: 8px;
+				}
+
+				@media (min-width: 1280px) {
+					font-size: 20px;
+				}
+
+				@media (min-width: 1680px) {
+					font-size: 24px;
+					line-height: 1.33;
+				}
+
+				&::placeholder {
+					color: #828282;
+				}
+
+				&.filled {
+					border-color: $black;
+
+					& + label {
+						font-size: 10px;
+						bottom: 30px;
+
+						@media (min-width: 640px) {
+							font-size: 12px;
+							bottom: 36px;
+						}
+
+						@media (min-width: 1280px) {
+							font-size: 16px;
+							bottom: 40px;
+						}
+
+						@media (min-width: 1680px) {
+							font-size: 18px;
+						}
+					}
+				}
+
+				&.error {
+					border-color: red;
+
+					& + label {
+						color: red;
+					}
+				}
+			}
+
+			textarea {
+
+				& + label {
+					bottom: auto;
+					top: -4px;
+				}
+
+				&.filled {
+					& + label {
+						top: -14px;
+						bottom: auto;
+
+						@media (min-width: 640px) {
+							top: -20px;
+						}
+
+						@media (min-width: 1280px) {
+							top: -24px;
+						}
+					}
+				}
+			}
+		}
+
+		.contact-form-input-email {
+			@media (max-width: 959.98px) {
+				width: 100%;
+			}
+		}
+
+		.contact-form-input-checkbox {
+			margin-bottom: 24px;
+
+			@media (min-width: 640px) {
+				margin-bottom: 36px;
+			}
+
+			@media (min-width: 960px) {
+				margin-bottom: 40px;
+			}
+
+			@media (min-width: 1280px) {
+				margin-bottom: 56px;
+			}
+
+			label {
+				color: #828282;
+
+				a {
+					color: $black;
+				}
+
+				&:before {
+					border-radius: 4px;
+					top: -3px;
+				}
+			}
+
+			input {
+				&:checked {
+					& + label {
+						&:before {
+							background-color: rgba(0, 0, 0, 0);
+						}
+
+						&:after {
+							top: 3px;
+							left: 7px;
+							background: url(../img/form/check-black.svg) no-repeat;
+						}
+					}
+				}
+
+				&.error {
+					& + label {
+						color: $tomato;
+
+						a {
+							color: $red;
+						}
+
+						&:before {
+							border-color: $tomato;
+						}
+					}
+				}
+			}
+		}
+
+		.contact-form__upload {
+			border-color: rgba(0, 0, 0, 0.4);
+
+			@media (min-width: 640px) {
+				padding: 18px;
+			}
+
+      &:not(.non-empty) {
+        @media (min-width: 960px) {
+          max-width: 450px;
+        }
+
+        @media (min-width: 1280px) {
+          max-width: 550px;
+        }
+      }
+
+			&-title {
+				color: $black;
+				font-size: 12px;
+
+				@media (min-width: 640px) {
+					font-size: 18px;
+				}
+
+				@media (min-width: 1280px) {
+					font-size: 20px;
+				}
+
+				@media (min-width: 1680px) {
+					//font-size: 24px;
+					font-family: $ptmono;
+				}
+			}
+
+			&-result {
+				background-color: $black;
+			}
+
+			&-filename {
+				color: $white;
+			}
+
+			&-counter {
+				background-color: $black;
+				color: $white;
+			}
+		}
+	}
+
+	&__info {
+		max-width: 215px;
+		margin-bottom: 32px;
+		display: block;
+
+		@media (min-width: 640px) {
+			margin-bottom: 0;
+			margin-right: 59px;
+			max-width: 111px;
+		}
+
+		@media (min-width: 960px) {
+			max-width: 165px;
+		}
+
+		@media (min-width: 1280px) {
+			max-width: 300px;
+		}
+	}
+
+	&__image {
+		position: relative;
+		z-index: 1;
+		margin: 0;
+		width: 175px;
+		height: 153px;
+
+		@media (min-width: 640px) {
+			width: 89px;
+			height: 78px;
+		}
+
+		@media (min-width: 960px) {
+			width: 134px;
+			height: 118px;
+		}
+
+		@media (min-width: 1280px) {
+			width: 210px;
+			height: 184px;
+		}
+
+		@media (min-width: 1680px) {
+			width: 244px;
+			height: 214px;
+		}
+
+		&-item {
+			mask-image: url(../img/home/shape.svg);
+			-webkit-mask-image: url(../img/home/shape.svg);
+			mask-size: 100%;
+			-webkit-mask-size: 100%;
+			mask-repeat: no-repeat;
+			-webkit-mask-repeat: no-repeat;
+			width: 100%;
+			height: 100%;
+		}
+
+		picture,
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+		}
+
+		img.contact__image-shape {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			//z-index: -1;
+			object-fit: unset;
+			transform: translateX(32px);
+
+			@media (min-width: 640px) {
+				transform: translateX(20px);
+			}
+
+			@media (min-width: 960px) {
+				transform: translateX(32px);
+			}
+
+			@media (min-width: 1280px) {
+				transform: translateX(48px);
+			}
+
+			@media (min-width: 1680px) {
+				transform: translateX(56px);
+			}
+		}
+	}
+
+	&__person {
+		position: static;
+		margin: 0;
+		margin-top: 16px;
+		padding: 0;
+
+		@media (min-width: 1280px) {
+			margin-top: 32px;
+		}
+
+		&-name {
+			color: $black;
+			font-size: 18px;
+			line-height: 1.2;
+
+			@media (min-width: 960px) {
+				font-size: 20px;
+			}
+
+			@media (min-width: 1680px) {
+				font-size: 24px;
+				line-height: 1.33;
+			}
+		}
+
+		&-position {
+			color: $black;
+			font-size: 12px;
+			line-height: 16px;
+
+			@media (min-width: 1280px) {
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+#sending {
+	font-size: 16px;
+}

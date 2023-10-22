@@ -1,0 +1,454 @@
+.about {
+  padding: 48px 0;
+  background-color: $light-gray;
+  position: relative;
+
+  @include media-up(md) {
+    padding: 96px 0;
+  }
+
+  @media (min-width: 1025px) {
+    padding: 128px 0;
+    overflow: hidden;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  &__snake {
+    position: absolute;
+    display: none;
+
+    @include media-up(md) {
+      display: block;
+      max-width: 125px;
+      top: 100px;
+      right: -50px;
+    }
+
+    @media (min-width: 1025px) {
+      top: -55px;
+      right: -22px;
+    }
+  }
+
+  &__circle {
+    max-width: 268px;
+    display: none;
+
+    @include media-up(xl) {
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 32px;
+
+    @include media-up(md) {
+      margin-bottom: 72px;
+    }
+
+    @media (min-width: 1025px) {
+      margin-bottom: 64px;
+    }
+  }
+
+  &-products {
+
+    @media (min-width: 1025px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 16px;
+    }
+
+    @include media-up(xl) {
+      grid-gap: 32px;
+    }
+
+    &__link {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      //height: 576px;
+      max-width: 520px;
+      width: 100%;
+      color: $pre-black;
+      transition: color 0.3s;
+      margin: 0 auto 48px;
+
+      &:last-child {
+        margin: 0 auto;
+      }
+
+      @include media-up(md) {
+        margin: 0 auto 64px;
+      }
+
+      @media (min-width: 1025px) {
+        margin: 0;
+      }
+
+      &:hover {
+        color: $white;
+
+        .about-products__content {
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.102);
+          background-color: $green;
+        }
+
+        .about-products__list-item:before {
+          background-color: $white;
+        }
+
+        .color-green {
+          color: $white;
+        }
+
+        .about-products__button {
+          background-color: $green;
+          color: $white;
+        }
+      }
+
+      .color-green {
+        transition: color 0.3s;
+      }
+    }
+
+    &__content {
+      position: relative;
+      background-color: $white;
+      width: 100%;
+      //height: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 48px;
+      min-height: 488px;
+      transition: background-color 0.3s, box-shadow 0.3s;
+
+      @media (min-width: 425px) {
+        min-height: 576px;
+      }
+
+      @include media-up(md) {
+        margin-bottom: 64px;
+      }
+
+      @media (min-width: 1025px) {
+        min-height: 488px;
+      }
+
+      @media (min-width: 1440px) {
+        min-height: 576px;
+      }
+    }
+
+    &__info {
+      margin-bottom: auto;
+      padding: 24px 24px 0;
+
+      @media (min-width: 425px) {
+        padding: 40px 40px 0;
+      }
+
+      @media (min-width: 1440px) {
+        padding: 32px 32px 0;
+      }
+
+      @media (min-width: 1920px) {
+        padding: 40px 40px 0;
+      }
+    }
+
+    &__title {
+      //text-align: center;
+      font-size: 24px;
+      font-family: $main-font;
+      font-weight: 600;
+      margin-bottom: 16px;
+
+      @include media-up(md) {
+        font-size: 40px;
+        margin-bottom: 24px;
+      }
+
+      @media (min-width: 1025px) {
+        font-size: 24px;
+      }
+
+      @media (min-width: 1620px) {
+        font-size: 40px;
+      }
+    }
+
+    &__list {
+      list-style: none;
+      font-family: $main-font;
+
+      &-item {
+        font-size: 16px;
+        position: relative;
+        padding-left: 16px;
+
+        @include media-up(md) {
+          font-size: 24px;
+        }
+
+        @media (min-width: 1025px) {
+          font-size: 16px;
+        }
+
+        @media (min-width: 1620px) {
+          font-size: 24px;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 8px;
+
+          @include media-up(md) {
+            margin-bottom: 16px;
+          }
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          left: 0;
+          top: 6px;
+          background-color: $green;
+          transition: background-color 0.3s;
+
+          @include media-up(md) {
+            top: 10px;
+          }
+
+          @media (min-width: 1025px) {
+            top: 6px;
+          }
+
+          @media (min-width: 1620px) {
+            top: 10px;
+          }
+        }
+
+        strong {
+          font-family: $list-font;
+        }
+      }
+    }
+
+    &__image {
+      position: relative;
+      height: 0;
+      overflow: hidden;
+      width: 100%;
+      padding-top: 70%;
+
+      @media (min-width: 425px) {
+        //padding-top: 280px;
+      }
+
+      @include media-up(md) {
+        padding-top: 240px;
+      }
+
+      @media (min-width: 1025px) {
+        padding-top: 192px;
+      }
+
+      @media (min-width: 1440px) {
+        padding-top: 228px;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 20px;
+        width: calc(100% - 40px);
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+      }
+    }
+
+    &__button {
+      align-self: center;
+    }
+  }
+}
+
+.services {
+  margin: 48px 0;
+
+  @include media-up(md) {
+    margin: 96px 0;
+  }
+
+  @media (min-width: 1025px) {
+    margin: 128px 0;
+  }
+
+  &__title {
+    margin-bottom: 64px;
+
+    @include media-up(md) {
+      max-width: 390px;
+    }
+  }
+
+  &__block {
+
+    @media (min-width: 1025px) {
+      grid-gap: 32px 26px;
+      display: inline-grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 1440px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &-item {
+      position: relative;
+    }
+  }
+}
+
+.block {
+  &-item {
+    padding: 48px 24px;
+    background-color: $white;
+    min-height: 350px;
+    max-width: 518px;
+    width: 100%;
+    justify-self: flex-start;
+    margin: 0 auto 32px;
+    transition: background-color 0.3s;
+
+    @media (min-width: 425px) {
+      padding: 64px 32px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 1025px) {
+      margin: 0;
+      max-width: none;
+    }
+
+    @media (min-width: 1620px) {
+      min-height: 504px;
+    }
+
+    &:hover {
+      background-color: $green;
+      color: $white;
+
+      ul {
+        li {
+          color: $white;
+
+          &:after {
+            background-color: $white;
+          }
+        }
+      }
+    }
+
+    &__title {
+      font-size: 20px;
+      margin-bottom: 24px;
+      transition: color 0.3s;
+
+      //@include media-up(md) {
+      //  font-size: 32px;
+      //}
+
+      @media (min-width: 1620px) {
+        font-size: 32px;
+      }
+    }
+
+    p, ul, ol {
+      font-family: $main-font;
+      list-style: none;
+      line-height: 1.5;
+
+      @include media-up(md) {
+        line-height: 1.2;
+      }
+    }
+
+    ul {
+      li {
+        padding-left: 16px;
+        position: relative;
+        transition: color 0.3s;
+        font-size: 16px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: $green;
+          left: 0;
+          top: 6px;
+          transition: background-color 0.3s;
+
+          @media (min-width: 1620px) {
+            top: 8px;
+          }
+        }
+
+        @media (min-width: 1620px) {
+          font-size: 20px;
+        }
+      }
+    }
+
+    &__shape {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 48px;
+      height: 16px;
+      transform: translateY(8px);
+
+      @include media-up(md) {
+        width: 78px;
+        height: 27px;
+        transform: translateY(13.5px);
+      }
+
+      @media (min-width: 1025px) {
+        width: 137px;
+        height: 48px;
+        transform: translateY(24px);
+      }
+    }
+  }
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

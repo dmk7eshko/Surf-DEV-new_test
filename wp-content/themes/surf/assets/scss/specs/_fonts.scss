@@ -1,0 +1,18 @@
+$font_directory: "../fonts";
+
+@include font($font_directory, 'Basis Grotesque Pro', 'BasisGrotesquePro-LightItalic', 300, 'italic');
+@include font($font_directory, 'Basis Grotesque Pro', 'BasisGrotesquePro-Italic', 'normal', 'italic');
+@include font($font_directory, 'Basis Grotesque Pro', 'BasisGrotesquePro-MediumItalic', 500, 'italic');
+@include font($font_directory, 'Basis Grotesque Pro', 'BasisGrotesquePro-BoldItalic', 'bold', 'italic');
+@include font($font_directory, 'Basis Grotesque Pro', 'BasisGrotesquePro-BlackItalic', 900, 'italic');
+
+@include font($font_directory, 'Basis Grotesque Pro', 'BasisGrotesquePro-Light', 300, 'normal');
+@include font($font_directory, 'Basis Grotesque Pro', 'BasisGrotesquePro-Regular', 'normal', 'normal');
+@include font($font_directory, 'Basis Grotesque Pro', 'BasisGrotesquePro-Medium', 500, 'normal');
+@include font($font_directory, 'Basis Grotesque Pro', 'BasisGrotesquePro-Bold', 'bold', 'normal');
+@include font($font_directory, 'Basis Grotesque Pro', 'BasisGrotesquePro-Black', 900, 'normal');
+
+@include font($font_directory, 'Steinbeck', 'Steinbeck-Italic', 'normal', 'italic');
+@include font($font_directory, 'Steinbeck', 'Steinbeck-Regular', 'normal', 'normal');
+
+@include font($font_directory, 'PTMono', 'PTMono-Regular', 'normal', 'normal');

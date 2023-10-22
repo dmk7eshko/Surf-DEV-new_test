@@ -1,0 +1,157 @@
+.block-video {
+    margin-bottom: 56px;
+
+    @include media-up(md) {
+        margin-bottom: 152px;
+    }
+}
+
+.video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 63%;
+    background-color: #000000;
+
+    @include media-up(xl) {
+        padding-top: 47%;
+    }
+
+    &--enabled {
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(180deg, rgba(25, 25, 25, 0) 11.86%, #191919 77.88%);
+        }
+
+        .video__play {
+            display: block;
+        }
+    }
+
+    &__link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__media {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        object-fit: cover;
+    }
+
+    &__play {
+        color: #ffffff;
+        position: absolute;
+        display: none;
+        bottom: 16px;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+
+        @include media-up(md) {
+            bottom: 56px;
+        }
+
+        @include media-up(xl) {
+            bottom: 112px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__title {
+        width: 100%;
+        margin-bottom: 8px;
+        font-size: 20px;
+        line-height: 1.2;
+
+        @include media-up(sm) {
+            font-size: 32px;
+            margin-bottom: 32px;
+        }
+
+        @include media-up(md) {
+            font-size: 68px;
+        }
+
+        @include media-up(lg) {
+            margin-bottom: 56px;
+        }
+    }
+
+    &__line {
+        display: block;
+        flex: 1;
+        margin-right: 16px;
+        border-bottom: 1px solid #ffffff;
+
+        @include media-up(lg) {
+            margin-right: 20px;
+        }
+    }
+
+    &__button {
+        flex-shrink: 0;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        transition: opacity 0.3s;
+
+        @include media-up(md) {
+            display: flex;
+            align-items: center;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        svg {
+            width: 48px;
+            height: 48px;
+
+            @include media-up(lg) {
+                width: 88px;
+                height: 88px;
+            }
+        }
+
+        &-text {
+            display: none;
+
+            @include media-up(md) {
+                display: block;
+                font-size: 16px;
+                color: #ffffff;
+                text-align: left;
+                margin-left: 16px;
+            }
+
+            @include media-up(lg) {
+                font-size: 24px;
+            }
+        }
+    }
+}

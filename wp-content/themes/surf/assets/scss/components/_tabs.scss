@@ -1,0 +1,144 @@
+.tabs {
+    padding: 48px 0;
+    background-color: #1a1a1a;
+    color: #f1f0f0;
+
+    @include media-up(md) {
+        padding: 112px 0;
+    }
+
+    &__title {
+        font-size: 26px;
+        margin-bottom: 32px;
+
+        @include media-up(md) {
+            font-size: 54px;
+            margin-bottom: 56px;
+        }
+
+        br {
+            display: none;
+
+            @include media-up(sm) {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        overflow: visible;
+        margin-left: 0;
+
+        @include media-up(md) {
+            border-bottom: 1px solid #828282;
+            display: block;
+            margin-bottom: 32px;
+            padding-bottom: 8px;
+        }
+
+        &-button {
+            cursor: pointer;
+            width: auto;
+            height: auto;
+            color: #ffffff;
+            font-size: 18px;
+            padding: 12px 20px;
+            border: none;
+            box-shadow: inset 0 0 0 1px #ffffff;
+            border-radius: 0;
+            background: none;
+            opacity: 1;
+            transition: all 0.3s;
+            flex-shrink: 0;
+            margin-right: 12px;
+            margin-left: 0;
+
+            //&:last-child {
+            //    margin-right: 0;
+            //}
+
+            @include media-up(md) {
+                margin: 0 24px 16px 0;
+            }
+
+            @include media-up(lg) {
+                padding: 24px 40px;
+                font-size: 24px;
+                margin: 0 32px 24px 0;
+            }
+
+            &--active {
+                color: #1a1a1a;
+                background: #ffffff;
+            }
+        }
+
+        .swiper-wrapper {
+            @include media-up(md) {
+                flex-wrap: wrap;
+            }
+        }
+
+        .swiper-slide {
+            width: auto;
+        }
+    }
+
+    &__slider {
+
+        @include media-down(sm) {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #ffffff;
+        }
+
+        &-item {
+
+        }
+
+        &-block {
+
+            &__item {
+                color: #f1f0f0;
+
+                &:before {
+                    background-color: #f1f0f0;
+
+                    @include media-down(md) {
+                        display: none;
+                    }
+                }
+            }
+
+            &__title {
+                margin-bottom: 20px;
+            }
+
+            &__content {
+                h2, h3, h4 {
+                    margin-bottom: 20px;
+                    font-weight: 500;
+                    font-family: 'Basis Grotesque Pro', system-ui, sans-serif;
+
+                    @include media-up(md) {
+                        margin-bottom: 24px;
+                    }
+                }
+
+                p, ul, ol {
+                    margin-bottom: 32px;
+                    color: #f1f0f0;
+                }
+
+                ul, ol {
+                    li {
+                        &:after {
+                            background: #f1f0f0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,62 @@
+.sticky {
+    &__inner {
+
+        @include media-up(xl) {
+            .front-section-title {
+                position: sticky;
+                top: 150px;
+            }
+        }
+    }
+
+    &-list {
+        padding: 0;
+        list-style: none;
+
+        @media (min-width: 1025px) {
+            margin-left: auto;
+            max-width: 610px;
+        }
+
+        &__item {
+            margin-bottom: 32px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include media-up(md) {
+                margin-bottom: 56px;
+            }
+        }
+
+        &__image {
+            width: 72px;
+            height: 72px;
+            object-fit: contain;
+            margin-bottom: 8px;
+
+            @include media-up(md) {
+                margin-bottom: 16px;
+            }
+        }
+
+        &__title {
+            margin-bottom: 8px;
+            font-size: 20px;
+
+            @include media-up(md) {
+                margin-bottom: 16px;
+                font-size: 32px;
+            }
+        }
+
+        &__text {
+            font-size: 16px;
+
+            @include media-up(md) {
+                font-size: 20px;
+            }
+        }
+    }
+}

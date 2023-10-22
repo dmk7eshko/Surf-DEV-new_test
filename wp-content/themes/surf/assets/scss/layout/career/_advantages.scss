@@ -1,0 +1,240 @@
+.career-advantages {
+	&__title {
+		margin-bottom: 40px;
+
+		@include media-up(md) {
+			display: none;
+		}
+	}
+}
+
+.team {
+	&-slider {
+		overflow: visible;
+
+		&__controls {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			display: flex;
+
+			&-button {
+				right: unset;
+				left: unset;
+				position: relative;
+				margin: 0;
+				transform: none;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border: 1px solid $dark-gray;
+				border-bottom: none;
+				color: $dark-gray;
+				transition: all 0.3s;
+
+				&:after {
+					display: none;
+				}
+
+				&:hover {
+					border-color: $black;
+					color: $black;
+					z-index: 1;
+				}
+
+				&--prev {
+					width: 64px;
+					height: 64px;
+					margin-right: -1px;
+
+					@media (min-width: 1025px) {
+						width: 85px;
+						height: 85px;
+					}
+				}
+
+				&--next {
+					height: 64px;
+					width: 149px;
+					border-right: none;
+
+					@media (min-width: 1025px) {
+						width: 211px;
+						height: 85px;
+					}
+
+					&:after {
+						content: '';
+						display: block;
+						opacity: 0;
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						background: radial-gradient(50% 50% at 50% 50%, rgba(66, 5, 241, 0.54) 67.64%, rgba(255, 255, 255, 0) 100%);
+						filter: blur(25px);
+						transition: opacity 0.3s;
+					}
+
+					&:hover {
+						&:after {
+							opacity: 1;
+						}
+					}
+
+					svg {
+						flex-shrink: 0;
+						margin-left: 9px;
+					}
+				}
+			}
+		}
+
+		&__badge {
+			position: absolute;
+			padding: 3px 5px 3px 7px;
+			left: 18px;
+			top: 95px;
+			z-index: 1;
+			color: $white;
+			background: linear-gradient(90deg, #F887A0 0%, #F2BE04 52.14%, #6DBEB3 100%);
+			font-family: $steinbeck;
+			font-size: 16px;
+			line-height: 1.1;
+			transform: rotate(-90deg);
+			transform-origin: top left;
+
+			@include media-up(md) {
+				font-size: 30px;
+				padding: 6px 10px 3px;
+				left: -14px;
+				top: auto;
+				bottom: 0;
+				transform: rotate(25deg);
+				transform-origin: unset;
+			}
+
+			@media (min-width: 1025px) {
+				left: -46px;
+			}
+		}
+	}
+
+	&-slide {
+		display: flex;
+		flex-wrap: wrap;
+		height: auto;
+
+		@include media-down(sm) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		&__image {
+			position: relative;
+			width: calc(100% - 2px);
+			border: 1px solid $black;
+			height: 0;
+			padding-top: 64%;
+
+			@include media-up(md) {
+				width: 100%;
+				height: auto;
+				padding-top: 0;
+				max-width: 505px;
+				flex: 0.75;
+				border-right: 1px solid $black;
+			}
+
+			@media (min-width: 1025px) {
+				flex: 1;
+			}
+		}
+
+		&__item {
+			@include object-fit-abs(cover, center 20%);
+
+			@include media-up(md) {
+				@include object-fit-abs(cover, center);
+			}
+		}
+
+		&__icon {
+			display: block;
+			position: absolute;
+			width: 80px;
+			height: 80px;
+			bottom: -12px;
+			right: -7px;
+			animation: rotate 12s linear backwards infinite;
+
+			@include media-up(md) {
+				bottom: auto;
+				right: auto;
+				left: calc(100% - 40px);
+				top: -40px;
+			}
+
+			@media (min-width: 1025px) {
+				width: 110px;
+				height: 110px;
+				left: calc(100% - 55px);
+				top: -55px;
+			}
+		}
+
+		&__content {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+
+			&-title {
+				display: none;
+
+				@include media-up(md) {
+					display: block;
+					letter-spacing: -0.01em;
+					padding: 24px;
+					border-bottom: 1px solid $black;
+					border-right: 1px solid $black;
+					border-top: 1px solid $black;
+				}
+
+				@media (min-width: 1025px) {
+					padding: 48px 24px 33px;
+				}
+
+				@include media-up(xl) {
+					padding: 53px 68px 33px;
+				}
+			}
+
+			&-text {
+				padding: 15px 18px 105px;
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 1.32;
+				flex: 1;
+				border-bottom: 1px solid $black;
+				border-right: 1px solid $black;
+				border-left: 1px solid $black;
+
+				@include media-up(md) {
+					font-size: 20px;
+					border-left: none;
+				}
+
+				@media (min-width: 1025px) {
+					padding: 48px 24px 128px;
+					font-size: 24px;
+				}
+
+				@include media-up(xl) {
+					padding: 53px 82px 128px 68px;
+				}
+			}
+		}
+	}
+}

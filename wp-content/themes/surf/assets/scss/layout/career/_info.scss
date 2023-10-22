@@ -1,0 +1,76 @@
+.career-info {
+	margin: 38px 0 58px;
+	position: relative;
+
+	@media (min-width: 1025px) {
+		margin: 86px 0 200px;
+	}
+
+	&__list {
+		font-family: $steinbeck;
+		position: relative;
+		z-index: 1;
+
+		&:before {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 50%;
+			transform: translateY(-50%);
+			left: -80px;
+			display: block;
+			width: 240px;
+			height: 240px;
+			background: radial-gradient(50% 50% at 50% 50%, #FFC700 67.64%, rgba(255, 255, 255, 0) 100%);
+			filter: blur(39px);
+
+			@media (min-width: 1025px) {
+				left: -10%;
+				top: 60%;
+				width: 464px;
+				height: 464px;
+				filter: blur(73.8px);
+			}
+		}
+
+		&-item {
+			color: rgba($black, 0);
+			-webkit-text-stroke: 0.5px $black;
+			font-size: 20px;
+			line-height: 1.2;
+
+			@include media-up(sm) {
+				font-size: 32px;
+			}
+
+			@include media-up(lg) {
+				-webkit-text-stroke: 1px $black;
+				font-size: 48px;
+			}
+
+			@media (min-width: 1025px) {
+				font-size: 68px;
+				letter-spacing: -0.01em;
+			}
+		}
+	}
+
+	&__shape {
+		max-width: 222px;
+		width: 100%;
+		position: absolute;
+		bottom: -76px;
+		right: -70px;
+
+		@include media-up(md) {
+			max-width: 360px;
+		}
+
+		@media (min-width: 1025px) {
+			max-width: 480px;
+			top: 35%;
+			right: -85px;
+			bottom: auto;
+		}
+	}
+}

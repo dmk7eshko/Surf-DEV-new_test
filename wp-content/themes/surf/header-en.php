@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="alternate" type="application/rdf+xml" title="RDF mapping" href="<?php bloginfo('rdf_url'); ?>">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="<?php bloginfo('rss_url'); ?>">
+	<link rel="alternate" type="application/rss+xml" title="Comments RSS" href="<?php bloginfo('comments_rss2_url'); ?>">
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
+	<link rel="shortcut icon" href="/wp-content/themes/surf/favicon.ico" type="image/x-icon">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>	<![endif]-->
+
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({
+              'gtm.start':
+                  new Date().getTime(), event: 'gtm.js'
+          });
+          var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src =
+              'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-M2Z5BX7');</script>
+	<!-- End Google Tag Manager -->
+	
+<!-- Hotjar Tracking Code for my site -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3391410,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+	
+	<script> (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('3P1w24dvr3G8mY5n'); </script>
+
+	<?php wp_head(); ?>
+</head>
+<body <?php body_class('app-dev');?>>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2Z5BX7" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="header sticky-head app-dev-header">
+	<div class="container container--header">
+		<div class="head">
+			<div class="logo">
+				<a href="/" class="logo__link">
+					<img class="logo__image logo__image--default" src="<?= THEME . '/assets/img/logo.svg'; ?>" alt="">
+					<img class="logo__image logo__image--mobile" src="<?= THEME . '/assets/img/logo-white.svg'; ?>" alt="">
+				</a>
+			</div>
+
+			<?php if (!is_page(243) && !is_page_template('tpl-career-form.php')): ?>
+
+				<nav class="navbar navbar-default">
+					<?php $args = array(
+						'theme_location' => 'top',
+						'container' => false,
+						'menu_id' => 'top-nav-ul',
+						'items_wrap' => '<ul id="top-nav-ul" class="nav navbar-nav top-menu">%3$s</ul>',
+						'menu_class' => 'top-menu',
+						'walker' => new HeaderWalker()
+					);
+					wp_nav_menu($args); // выводим верхнее меню
+					?>
+				</nav>
+
+				<a href="<?php the_permalink('243') ?>" class="header-call btn btn-default">Estimate project</a>
+
+			<?php else: ?>
+
+				<div class="form-closer js-form-closer">
+					<a href="#"> <img src="<?= THEME . '/assets/img/closer.svg'; ?>" alt=""> </a>
+				</div>
+
+			<?php endif; ?>
+
+			<div class="mobile-menu"><span></span></div>
+		</div>
+	</div>
+</header>

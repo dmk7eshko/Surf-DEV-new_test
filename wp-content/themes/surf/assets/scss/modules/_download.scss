@@ -1,0 +1,42 @@
+.download {
+
+    &__inner {
+        max-width: 992px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 40px 0;
+
+        @include media-up(md) {
+            padding: 64px 0;
+        }
+
+        @include media-up(lg) {
+            padding: 60px 0;
+        }
+    }
+
+    &__image {
+        max-width: 164px;
+        margin-bottom: 56px;
+
+        @include media-up(md) {
+            max-width: 221px;
+        }
+
+        @include media-up(lg) {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 56px;
+
+        @include media-between(md, md) {
+            font-size: 44px;
+        }
+
+        @media (min-width: 1025px) {
+            margin-bottom: 80px;
+        }
+    }
+}

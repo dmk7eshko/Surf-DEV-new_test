@@ -1,0 +1,17 @@
+$font_directory: "../fonts";
+
+/* Bungee */
+@include font($font_directory, 'Bungee', 'Bungee-Regular', 'normal', 'normal');
+
+/* Inter */
+@include font($font_directory, 'Inter', 'Inter-Light', 300, 'normal');
+@include font($font_directory, 'Inter', 'Inter-Regular', 'normal', 'normal');
+@include font($font_directory, 'Inter', 'Inter-SemiBold', 600, 'normal');
+@include font($font_directory, 'Inter', 'Inter-Bold', 'bold', 'normal');
+
+/* Circular Std */
+@include font($font_directory, 'CircularStd', 'CircularStd-Book', 500, 'normal');
+
+/* Rowdies */
+@include font($font_directory, 'Rowdies', 'Rowdies-Regular', 'normal', 'normal');
+@include font($font_directory, 'Rowdies', 'Rowdies-Bold', 'bold', 'normal');

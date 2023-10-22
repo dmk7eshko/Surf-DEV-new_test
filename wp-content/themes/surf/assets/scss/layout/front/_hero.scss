@@ -1,0 +1,166 @@
+.front-hero {
+  background-color: $charcoal;
+  color: $white;
+  padding: 96px 0 74px;
+
+  @include media-up(md) {
+    padding: 200px 0 228px;
+    position: relative;
+  }
+
+  @media (min-width: 1025px) {
+    padding: 170px 0;
+  }
+
+  &__inner {
+    max-width: 992px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+
+    @include media-up(md) {
+      font-size: 48px;
+    }
+
+    @media (min-width: 1025px) {
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 1620px) {
+      font-size: 64px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    max-width: none;
+    margin-bottom: 16px;
+
+    @include media-up(md) {
+      font-size: 24px;
+      margin-bottom: 48px;
+    }
+
+    @media (min-width: 1620px) {
+      font-size: 32px;
+    }
+  }
+
+  &__brands {
+    font-size: 0;
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4px;
+
+    @include media-up(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1025px) {
+      grid-gap: unset;
+      margin: -2px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__shape {
+    display: none;
+
+    @include media-up(md) {
+      display: block;
+      position: absolute;
+      top: 69%;
+      right: -220px;
+      max-width: calc(438px + 212 * ((100vw - 768px) / 1152));
+
+    }
+
+    @media (min-width: 1430px) {
+      top: 6%;
+      right: -210px;
+    }
+
+    @media (min-width: 1920px) {
+      max-width: 650px;
+    }
+  }
+
+  &__desc {
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+
+    @include media-up(md) {
+      margin-top: 48px;
+    }
+
+    @media (min-width: 1024px) {
+      margin-top: 64px;
+    }
+
+    @media (min-width: 1620px) {
+      font-size: 20px;
+    }
+
+    p {
+
+    }
+
+    span {
+      display: block;
+      margin-top: 16px;
+      color: $gold;
+    }
+  }
+}
+
+.brands {
+  &__item {
+    box-shadow: 0 1px 2px rgba(#556987, 0.1);
+    background-color: #636D7C;
+    width: 140px;
+    height: 75px;
+
+    @media (min-width: 375px) {
+      width: 149px;
+      height: 80px;
+    }
+
+    @media (min-width: 1025px) {
+      margin: 2px;
+      width: 105px;
+      height: 56px;
+    }
+
+    @media (min-width: 1620px) {
+      width: 149px;
+      height: 80px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    &-link {
+      padding: 15px;
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      @media (min-width: 1025px) {
+        padding: 11px;
+      }
+
+      @media (min-width: 1620px) {
+        padding: 15px;
+      }
+    }
+  }
+}

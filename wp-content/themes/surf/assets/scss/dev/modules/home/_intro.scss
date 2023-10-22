@@ -1,0 +1,123 @@
+.home-intro {
+	margin-top: 16px;
+
+	@media (min-width: 640px) {
+		margin-top: 45px;
+	}
+
+	@media (min-width: 960px) {
+		margin-top: 60px;
+	}
+
+	@media (min-width: 1280px) {
+		margin-top: 92px;
+	}
+
+	&__header {
+		margin-bottom: 16px;
+		position: relative;
+
+		@media (min-width: 640px) {
+			margin-bottom: 32px;
+		}
+
+		@media (min-width: 960px) {
+			margin-bottom: 48px;
+		}
+
+		@media (min-width: 1280px) {
+			margin-bottom: 56px;
+		}
+
+		@media (min-width: 1680px) {
+			margin-bottom: 72px;
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: -5px;
+			background-image: url("data:image/svg+xml,%3Csvg width='170' height='170' viewBox='0 0 170 170' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M69.2271 20.8026C77.148 10.3564 92.852 10.3564 100.773 20.8026C105.095 26.5024 112.156 29.4271 119.242 28.4528C132.229 26.6671 143.334 37.7715 141.548 50.759C140.574 57.8454 143.499 64.9062 149.198 69.2281C159.645 77.1489 159.645 92.853 149.198 100.774C143.499 105.096 140.574 112.157 141.548 119.243C143.334 132.23 132.229 143.335 119.242 141.549C112.156 140.575 105.095 143.5 100.773 149.199C92.852 159.646 77.148 159.646 69.2271 149.199C64.9052 143.5 57.8444 140.575 50.758 141.549C37.7705 143.335 26.6661 132.23 28.4518 119.243C29.4261 112.157 26.5015 105.096 20.8016 100.774C10.3554 92.853 10.3554 77.1489 20.8016 69.2281C26.5015 64.9062 29.4261 57.8454 28.4518 50.759C26.6661 37.7715 37.7705 26.6671 50.758 28.4528C57.8444 29.4271 64.9052 26.5024 69.2271 20.8026Z' fill='%23C4BAFF'/%3E%3Cpath d='M82.0709 116.501V107.568H88.2474V116.501H82.0709ZM83.1415 100.421L81.6592 49.501H88.6592L87.1768 100.421H83.1415Z' fill='black'/%3E%3C/svg%3E%0A");
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 72px;
+			height: 72px;
+			right: 0;
+
+			@media (min-width: 640px) {
+				width: 74px;
+				height: 74px;
+				top: -20px;
+				left: 337px;
+				right: auto;
+			}
+
+			@media (min-width: 960px) {
+				width: 116px;
+				height: 116px;
+				left: 468px;
+				top: -36px;
+			}
+
+			@media (min-width: 1280px) {
+				width: 140px;
+				height: 140px;
+				left: 626px;
+				top: -38px;
+			}
+
+			@media (min-width: 1680px) {
+				left: 790px;
+				top: -44px;
+				width: 170px;
+				height: 170px;
+			}
+		}
+	}
+
+	&__title {
+		max-width: 210px;
+
+		@media (min-width: 640px) {
+			max-width: none;
+		}
+	}
+
+	&__preview {
+		border-radius: 16px;
+		overflow: hidden;
+		margin-bottom: 24px;
+		position: relative;
+		padding-top: 46.875%;
+		height: 0;
+
+		@media (min-width: 640px) {
+			border-radius: 40px;
+			margin-bottom: 32px;
+		}
+
+		@media (min-width: 960px) {
+			border-radius: 32px;
+			margin-bottom: 56px;
+		}
+
+		@media (min-width: 1280px) {
+			border-radius: 56px;
+			margin-bottom: 64px;
+		}
+
+		@media (min-width: 1680px) {
+			margin-bottom: 72px;
+		}
+
+		video,
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

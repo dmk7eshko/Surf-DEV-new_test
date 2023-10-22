@@ -1,0 +1,101 @@
+body {
+  color: $pre-black;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &.body-dev {
+    &.padding {
+      padding-top: 73px;
+
+      @include media-up(md) {
+        padding-top: 105px;
+      }
+
+      @media (min-width: 1025px) {
+        padding-top: 126px;
+      }
+    }
+  }
+}
+
+.main {
+  flex: 1;
+
+  &--bg {
+    background-color: #F9F9F9;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $title-font;
+  line-height: 1.33;
+}
+
+h1, .h1 {
+  font-size: 28px;
+
+  @media (min-width: 375px) {
+    font-size: 32px;
+  }
+
+  @include media-up(md) {
+    font-size: calc(48px + 22 * ((100vw - 768px) / 1152));
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 70px;
+  }
+}
+
+h2, .h2 {
+  font-size: 28px;
+
+  @media (min-width: 375px) {
+    font-size: 32px;
+  }
+
+  @include media-up(md) {
+    font-size: 48px;
+  }
+}
+
+h3, .h3 {
+  font-size: 28px;
+
+  @media (min-width: 375px) {
+    font-size: 32px;
+  }
+
+  @include media-up(md) {
+    font-size: 40px;
+  }
+}
+
+ul, ol {
+  &[role="list"] {
+    list-style: none;
+  }
+}
+
+.page-title {
+  font-size: 28px;
+
+  @media (min-width: 375px) {
+    font-size: 32px;
+  }
+
+  @include media-up(md) {
+    font-size: 40px;
+  }
+
+  @media (min-width: 1620px) {
+    font-size: 56px;
+  }
+}
+
+.hidden-mobile {
+  @media (max-width: 1024.98px) {
+    display: none;
+  }
+}

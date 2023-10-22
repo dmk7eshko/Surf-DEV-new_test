@@ -1,0 +1,11 @@
+.single {
+    &-pic {
+
+        &--narrow {
+            @include media-up(md) {
+                max-width: 820px;
+                margin: 0 auto;
+            }
+        }
+    }
+}

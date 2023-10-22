@@ -1,0 +1,64 @@
+.career-apps {
+	margin: 56px 0 72px;
+
+	@include media-up(md) {
+		margin: 152px 0 128px;
+	}
+
+	&__title {
+		margin-bottom: 72px;
+
+		span {
+			color: $red;
+
+			@include media-up(md) {
+				color: $purple;
+			}
+		}
+	}
+
+	&__list {
+		font-size: 0;
+		margin: 0;
+		list-style: none;
+	}
+}
+
+.apps-list {
+	display: grid;
+	grid-gap: 16px;
+	grid-template-columns: repeat(2, 1fr);
+
+	@include media-up(md) {
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 20px;
+	}
+	
+	&__item {
+		
+	}
+	
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 21% 13%;
+		text-align: center;
+		background-color: $white;
+		transition: all 0.3s;
+		height: 100%;
+
+		@include media-up(md) {
+			border: 1px solid $black;
+		}
+
+		@media (min-width: 1025px) {
+			padding: 23.4% 21%;
+		}
+
+		&:hover {
+			border-color: $yellow;
+			background-color: $yellow;
+		}
+	}
+}

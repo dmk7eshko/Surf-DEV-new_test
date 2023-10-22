@@ -1,0 +1,188 @@
+.reasons {
+  background-color: $light-gray;
+  margin: 48px 0;
+
+  @include media-up(md) {
+    margin: 96px 0;
+  }
+
+  @media (min-width: 1025px) {
+    margin: 128px 0;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  &__shape {
+    display: none;
+
+    @include media-up(md) {
+      display: block;
+      max-width: 76px;
+      position: absolute;
+      right: 48px;
+      bottom: 52vw;
+      transform: rotate(60deg);
+    }
+
+    @include media-up(xl) {
+      transform: none;
+      right: 0;
+      top: 15%;
+      bottom: auto;
+    }
+  }
+
+  &__title {
+    margin-bottom: 48px;
+
+    @include media-up(md) {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+
+    @include media-up(xl) {
+      flex-direction: row;
+    }
+  }
+
+  &__image {
+    background-color: $charcoal;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    padding: 43px 24px 43px 0;
+    width: 88vw;
+    height: 77vw;
+    z-index: 1;
+    order: 1;
+    margin-top: 56px;
+
+    @include media-up(md) {
+      padding: 60px 32px 60px 0;
+      margin-top: 96px;
+      width: 53vw;
+      height: 56vw;
+    }
+
+    @include media-up(xl) {
+      margin-top: 0;
+      padding: 94px 64px 94px 0;
+      width: 34vw;
+      height: 39vw;
+      order: unset;
+      max-width: 656px;
+      max-height: 736px;
+      //margin-bottom: 60px;
+    }
+
+    &:after {
+      //content: '';
+      //position: absolute;
+      //bottom: -36px;
+      //right: -36px;
+      //width: 370px;
+      //height: 370px;
+      //background-color: $charcoal;
+      //z-index: -1;
+      //
+      //@include media-up(md) {
+      //    width: 48vw;
+      //    height: 48vw;
+      //}
+      //
+      //@include media-up(xl) {
+      //    bottom: -60px;
+      //    right: -60px;
+      //    width: 32vw;
+      //    height: 32vw;
+      //}
+    }
+
+    picture {
+      width: 100%;
+      position: relative;
+
+      @include media-up(md) {
+      }
+
+      > img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        max-width: none;
+        width: 108%;
+
+        @include media-up(md) {
+          height: 100%;
+          width: 126%;
+        }
+      }
+    }
+
+    img {
+      max-width: none;
+      width: 108%;
+      object-fit: cover;
+      object-position: right center;
+
+      @include media-up(md) {
+        height: 100%;
+        width: 126%;
+      }
+    }
+  }
+
+  &__list {
+    flex: 1;
+
+    @include media-up(xl) {
+      margin-left: 40px;
+      max-width: 786px;
+    }
+
+    &-item {
+      margin-bottom: 24px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include media-up(md) {
+        margin-bottom: 40px;
+      }
+    }
+
+    &-title {
+      margin-bottom: 16px;
+      font-size: 24px;
+
+      @media (min-width: 1620px) {
+        font-size: 40px;
+      }
+    }
+
+    &-text {
+      font-size: 16px;
+      margin-bottom: 16px;
+      line-height: 1.5;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include media-up(md) {
+        max-width: 786px;
+      }
+
+      @media (min-width: 1620px) {
+        font-size: 20px;
+      }
+    }
+  }
+}
